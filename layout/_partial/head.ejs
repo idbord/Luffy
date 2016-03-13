@@ -1,0 +1,28 @@
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="author" content="<%- config.author %>"/>
+    <meta name="description" content="<%- config.description %>"/>
+    <meta name="keywords" content="<%- config.keywords %>"/>
+    <%
+        var title = page.title;
+        if(is_archive()){
+            title = "归档：";
+            if(is_year()){
+                title += page.year;
+            }else if(is_month()) {
+                title += [page.year, page.month].join('/');
+            }
+        } else if(is_category()){
+            title = "分类：" + page.category;
+        }else if(is_tag()){
+            title = "标签：" + page.tag;
+        }
+    %>
+    <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+    <% if (theme.favicon){ %>
+    <link rel="icon" href="<%- theme.favicon %>"/>
+    <% } %>
+    <%- css('css/all') %>
+</head>
