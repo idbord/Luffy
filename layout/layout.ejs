@@ -4,11 +4,10 @@
 <body>
     <div id="container">
         <div id="left-part">
-
+            <%- body %>
         </div>
-        <div id="right-part">
-            <div id="right-top-bg"></div>
-        </div>
+        <%- partial('_partial/right-part') %>
     </div>
+    <%- js('js/all') %>
 </body>
 </html>

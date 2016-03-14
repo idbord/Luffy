@@ -1,0 +1,34 @@
+
+# personal information
+
+author: YangBo
+
+description: 我是逗比你信吗我是逗比你信吗我是逗比你信吗？
+
+# 头像url
+avatar: "http://7xkpsc.dl1.z0.glb.clouddn.com/2.png"
+
+# 开启头像动画效果
+animate: true
+
+# nav
+nav:
+  首页: /
+  文章归档: /archive
+  作品: /tag/work
+  相册: /tag/photo
+  留言: /tag/comment
+
+# about
+about: 你知道我是谁吗？你不就是那个写前端的！你才是写前端的，你一家写前端的，你家小区全是写前端的。。。
+
+
+# 社交网站
+social:
+  github: "https://www.github.com/idbord"
+  facebook: "https://www.github.com/idbord"
+  weibo: "https://www.github.com/idbord"
+  envelope-o: "https://www.github.com/idbord"
+  google: "https://www.github.com/idbord"
+  weixin: "https://www.github.com/idbord"
+  rss: "https://www.github.com/idbord"

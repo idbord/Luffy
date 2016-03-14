@@ -1,0 +1,58 @@
+<div id="right-part">
+    <div id="right-top-bg"></div>
+    <div id="right-bottom-content">
+        <div id="photo-wrap">
+            <a href="/" class="photo-href">
+                <% if(theme.avatar){ %>
+                <img src="<%= theme.avatar %>" class="<% if(theme.animate){ %>avatar-animate<% } %> avatar-img">
+                <% } %>
+            </a>
+        </div>
+        <div id="author">
+            <a href="/"><%- theme.author %></a>
+        </div>
+        <div id="description">
+            <%- theme.description %>
+        </div>
+        <div id="switch-menu">
+            <i class="fa fa-list"></i>
+        </div>
+        <div id="menu-arrow" class="menu-to-show"></div>
+        <ul id="menu-tips" class="menu-to-show">
+            <li>菜单</li>
+            <li>标签</li>
+            <li>关于</li>
+        </ul>
+
+        <div id="switch-content">
+            <div class="content-wrapper" id="nav">
+                <ul>
+                    <% for(var nav_item in theme.nav){ %>
+                    <li><a href="<%- url_for(theme.nav[nav_item]) %>"><%= nav_item %></a></li>
+                    <% } %>
+                </ul>
+                <div class="social-wrapper">
+                    <% for(var social_item in theme.social){ %>
+                    <a target="_blank" href="<%- url_for(theme.social[social_item]) %>">
+                        <div class="social-item"><i class="fa fa-<%= social_item %>"></i>
+                        </div>
+                    </a>
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="content-wrapper hidden" id="tags">
+                <%- tagcloud() %>
+            </div>
+
+            <div class="content-wrapper hidden" id="about">
+                <%= theme.about %>
+            </div>
+
+            <div id="copyright">
+                ©2016 <%= theme.author %><br>
+                <a href="">Hexo</a> theme <a href="">Luffy</a> by <a href="https://www.github.com/idbord">YangBo</a>
+            </div>
+        </div>
+    </div>
+</div>
