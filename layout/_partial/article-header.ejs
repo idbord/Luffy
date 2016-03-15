@@ -1,11 +1,19 @@
 <% if(type == "index"){ %>
-<div class="article-item-header">
-    <a target="_blank" href="<%- url_for(post.path) %>"><%= post.title %></a>
-    <a target="_blank" href="<%- url_for(post.path) %>"><span class="article-date"><i class="fa fa-calendar"></i><%= date(post.date, "YYYY/MM/DD") %></span></a>
-</div>
+    <div class="article-item-header">
+        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+        <a href="<%- url_for(post.path) %>"><span class="article-date"><i class="fa fa-calendar"></i><%= date(post.date, "YYYY/MM/DD") %></span></a>
+        <div id="category-tag">
+        <%- partial('post/category') %>
+        <%- partial('post/tag') %>
+        </div>
+    </div>
 <% }else{ %>
-<div class="article-wrapper-title">
-    <a href="<%- url_for(post.path) %>"><%= post.title %></a>
-    <a href="<%- url_for(post.path) %>"><span class="article-wrapper-date"><i class="fa fa-calendar"></i><%= date(post.date, "YYYY/MM/DD") %></span></a>
-</div>
+    <div class="article-wrapper-title">
+        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+        <a href="<%- url_for(post.path) %>"><span class="article-wrapper-date"><i class="fa fa-calendar"></i><%= date(post.date, "YYYY/MM/DD") %></span></a>
+        <div id="category-tag">
+            <%- partial('post/category') %>
+            <%- partial('post/tag') %>
+        </div>
+    </div>
 <% } %>

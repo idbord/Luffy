@@ -1,6 +1,10 @@
 <div class="article-wrapper">
-<%- partial('_partial/article-header', {post: post, type: "detail"}) %>
-    <div class="article-content">
+    <div class="article-block">
+        <%- partial('_partial/article-header', {post: post, type: "detail"}) %>
         <%- post.content %>
+        <%- partial('post/nav')%>
     </div>
+    <% if(theme.comment){ %>
+    <%- partial('post/comment')%>
+    <% } %>
 </div>

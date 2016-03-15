@@ -1,0 +1,68 @@
+<div id="mobile-nav">
+    <div id="nav-top-bg"></div>
+    <div id="nav-bottom-content">
+        <div id="nav-photo-wrap">
+            <a href="/" class="nav-photo-href">
+                <% if(theme.avatar){ %>
+                <img src="<%= theme.avatar %>" class="<% if(theme.animate){ %>avatar-animate<% } %> nav-avatar-img">
+                <% } %>
+            </a>
+        </div>
+        <div id="nav-author">
+            <a href="/"><%- theme.author %></a>
+        </div>
+        <div id="nav-description">
+            <%- theme.description %>
+        </div>
+    </div>
+</div>
+<div class="index-article-list">
+    <% if (type == "index"){ %>
+        <% page.posts.each(function(post){ %>
+        <div class="article-item article-block">
+            <%- partial('_partial/article-header', {post: post, type: "index"}) %>
+            <%- post.excerpt %>
+        </div>
+        <% }) %>
+
+        <% if (page.total > 1){ %>
+        <nav id="page-nav">
+            <%- paginator({
+                prev_text: '&laquo; Prev',
+                next_text: 'Next &raquo;'
+            }) %>
+        </nav>
+        <% } %>
+    <% } else { %>
+    <div id="archives-container">
+        <% var last; %>
+        <% page.posts.each(function(post, i){ %>
+                    <% var year = post.date.year(); %>
+                    <% if (last != year){ %>
+                    <% if (last != null){ %>
+                        </div></section>
+                    <% } %>
+                    <% last = year; %>
+                    <section class="archive-wrap">
+                        <div class="archive-year-wrap">
+                            <a href="<%- url_for('archive/' + year) %>" class="archive-year"><%= year %></a>
+                        </div>
+                    <div class="archives">
+                        <% } %>
+                        <%- partial('archive-post', {post: post}) %>
+                        <% }) %>
+                        <% if (page.posts.length){ %>
+                    </div></section>
+            <% } %>
+
+        <% if (page.total > 1){ %>
+            <nav id="page-nav">
+                <%- paginator({
+                    prev_text: '&laquo; Prev',
+                    next_text: 'Next &raquo;'
+                }) %>
+            </nav>
+        <% } %>
+    </div>
+    <% } %>
+</div>

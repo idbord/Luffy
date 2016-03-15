@@ -1,0 +1,32 @@
+<% if (post.prev || post.next){ %>
+<nav id="article-nav">
+  <% if (post.prev){ %>
+    <a href="<%- url_for(post.prev.path) %>" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        <% if (post.prev.title){ %>
+          前一篇：<%= post.prev.title %>
+        <% } else { %>
+          (no title)
+        <% } %>
+      </div>
+    </a>
+  <% }else{ %>
+    <a href="#" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        前一篇：已经木有了
+      </div>
+    </a>
+  <% } %>
+  <% if (post.next){ %>
+    <a href="<%- url_for(post.next.path) %>" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">后一篇：<%= post.next.title %></div>
+    </a>
+  <% } else{ %>
+  <a href="#" id="article-nav-older" class="article-nav-link-wrap">
+    <div class="article-nav-title">
+      后一篇：已经木有了
+    </div>
+  </a>
+  <% } %>
+</nav>
+<% } %>

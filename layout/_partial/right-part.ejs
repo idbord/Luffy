@@ -20,6 +20,7 @@
         <div id="menu-arrow" class="menu-to-show"></div>
         <ul id="menu-tips" class="menu-to-show">
             <li>菜单</li>
+            <li>分类</li>
             <li>标签</li>
             <li>关于</li>
         </ul>
@@ -41,6 +42,15 @@
                 </div>
             </div>
 
+            <div class="content-wrapper hidden" id="categories">
+                <%- list_categories(site.categories, {
+                    show_count: true,
+                    class: 'article-category',
+                    style: 'none',
+                    separator: ''
+                }) %>
+            </div>
+
             <div class="content-wrapper hidden" id="tags">
                 <%- tagcloud() %>
             </div>
@@ -51,7 +61,6 @@
 
             <div id="copyright">
                 ©2016 <%= theme.author %><br>
-                <a href="">Hexo</a> theme <a href="">Luffy</a> by <a href="https://www.github.com/idbord">YangBo</a>
             </div>
         </div>
     </div>

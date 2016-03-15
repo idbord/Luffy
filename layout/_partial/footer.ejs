@@ -1,0 +1,9 @@
+<div id="footer">
+    <% if(theme.friend_link){ %>
+    <div id="friend-link">友情链接：</div>
+    <% for(var item in theme.friends){ %>
+        <div class="friend-item"><a href="<%- theme.friends[item] %>"><%- item %></a></div>
+    <% } %>
+    <% } %>
+    <div class="theme-info"><a target="_blank" href="https://hexo.io">Hexo</a> theme <a target="_blank" href="https://github.com/idbord/Luffy">Luffy</a> by <a target="_blank" href="http://www.yangbo.info">YangBo</a></div>
+</div>

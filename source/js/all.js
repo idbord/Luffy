@@ -37,6 +37,7 @@ var set_doms_hidden = function(arr){
     var menu_items = menu_to_show[1].getElementsByTagName('li'),
         content_wrapper = document.getElementsByClassName("content-wrapper"),
         nav = document.getElementById("nav"),
+        categories = document.getElementById("categories"),
         tags = document.getElementById("tags"),
         about = document.getElementById("about");
 
@@ -48,11 +49,17 @@ var set_doms_hidden = function(arr){
     };
     menu_items[1].onclick = function(){
         set_doms_hidden(content_wrapper);
+        categories.classList.remove("hidden");
+        categories.classList.add("showing");
+        set_doms_display(menu_to_show, "none");
+    };
+    menu_items[2].onclick = function(){
+        set_doms_hidden(content_wrapper);
         tags.classList.remove("hidden");
         tags.classList.add("showing");
         set_doms_display(menu_to_show, "none");
     };
-    menu_items[2].onclick = function(){
+    menu_items[3].onclick = function(){
         set_doms_hidden(content_wrapper);
         about.classList.remove("hidden");
         about.classList.add("showing");
