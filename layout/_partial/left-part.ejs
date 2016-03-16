@@ -33,7 +33,7 @@
             }) %>
         </nav>
         <% } %>
-    <% } else { %>
+    <% } else if(type == "archive"){ %>
     <div id="archives-container">
         <% var last; %>
         <% page.posts.each(function(post, i){ %>
@@ -50,10 +50,10 @@
                     <div class="archives">
                         <% } %>
                         <%- partial('archive-post', {post: post}) %>
-                        <% }) %>
-                        <% if (page.posts.length){ %>
+        <% }) %>
+                    <% if (page.posts.length){ %>
                     </div></section>
-            <% } %>
+                    <% } %>
 
         <% if (page.total > 1){ %>
             <nav id="page-nav">
@@ -64,5 +64,17 @@
             </nav>
         <% } %>
     </div>
+    <% } else if(type == "otherPage"){ %>
+        <% if(page.slug == "comment"){ %>
+            <h1>留言页，待完成。。。</h1>
+            <%- partial('post/comment', {page: {title: "留言"}, post: {title: "留言", link: "/comment"}}) %>
+        <% } %>
+        <% if(page.slug == "work"){ %>
+            <h1>作品页，待完成。。。</h1>
+        <% } %>
+        <% if(page.slug == "photo"){ %>
+            <h1>相册页，待完成。。。</h1>
+        <% } %>
+
     <% } %>
 </div>

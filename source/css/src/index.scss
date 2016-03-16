@@ -7,6 +7,10 @@ a{
   @include transition(color, 700ms);
 }
 
+body{
+  background-color: #282B2E;
+}
+
 //===============mobile-nav===================
 #mobile-nav{
   display: none;
@@ -550,7 +554,7 @@ a{
 }
 
 .content-wrapper{
-  height: 260px;
+  height: 230px;
 }
 
 #nav{
@@ -587,7 +591,7 @@ a{
 
 #categories{
   width: 200px;
-  height: 260px;
+  height: 230px;
   overflow-y: auto;
   margin: 20px auto 0;
 }
@@ -606,7 +610,7 @@ a{
 
 #tags{
   width: 200px;
-  height: 260px;
+  height: 230px;
   overflow-y: auto;
   margin: 20px auto 0;
   & a{
